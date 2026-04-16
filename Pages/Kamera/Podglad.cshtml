@@ -1,0 +1,159 @@
+﻿@page
+@model ZamekDoDrzwi.Pages.Kamera.PodgladModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>System Kontroli Dostępu - Podgląd zdjęć</title>    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/dashboard.css" rel="stylesheet" />
+    <link href="/css/navbar.css" rel="stylesheet" />
+
+    <style>
+        /* Karty zdjęć */
+        .photo-card {
+            transition: transform 0.2s;
+        }
+
+            .photo-card:hover {
+                transform: scale(1.02);
+            }
+
+        /* Miniatury zdjęć */
+        .photo-img {
+            max-height: 200px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        /* Lightbox (pełnoekranowy podgląd zdjęcia) */
+        #lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1050;
+        }
+
+        #lightbox-img {
+            max-width: 90vw;
+            max-height: 90vh;
+            border: 4px solid white;
+        }
+
+        /* Przycisk zamknięcia */
+        #close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            z-index: 1060;
+        }
+
+        /* Przycisk pobrania zdjęcia */
+        #download-btn {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            font-size: 1rem;
+            background-color: #0dcaf0;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            z-index: 1060;
+        }
+
+            #download-btn:hover {
+                background-color: #31d2f2;
+            }
+    </style>
+</head>
+<body>
+    @* Pasek nawigacji *@
+    @Html.Partial("_LayoutNavbar")
+
+    <div class="container py-5">
+        <h3 class="mb-4">
+            <i class="bi bi-images me-2"></i>Podgląd zdjęć z kamery
+        </h3>
+
+        @if (Model.Zdjecia.Count == 0)
+        {
+            @* Komunikat, gdy brak zdjęć *@
+            <div class="alert alert-warning">Brak zdjęć do wyświetlenia.</div>
+        }
+        else
+        {
+            @* Lista zdjęć w układzie siatki *@
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+                @foreach (var zdjecie in Model.Zdjecia)
+                {
+                    <div class="col">
+                        <div class="card card-dark photo-card shadow-sm">
+                            <img src="@zdjecie.Url"
+                                 class="card-img-top photo-img"
+                                 alt="Zdjęcie z kamery"
+                                 onclick="powiekszZdjecie('@zdjecie.Url')">
+                            <div class="card-body text-center">
+                                <small class="muted">
+                                    Utworzone: @zdjecie.DataUtworzenia.ToString("yyyy-MM-dd HH:mm")
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+
+    @* Lightbox z powiększonym zdjęciem *@
+    <div id="lightbox" onclick="zamknijLightbox()">
+        <button class="btn btn-light lightbox-close" onclick="zamknijLightbox()">&times;</button>
+        <img id="lightbox-img" src="" alt="Podgląd zdjęcia" />
+        <a id="download-btn" class="btn accent-outline mt-3" href="#" download>
+            <i class="bi bi-download me-1"></i> Pobierz
+        </a>
+    </div>
+
+    @* Bootstrap JS *@
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Otwórz zdjęcie w lightboxie
+        function powiekszZdjecie(src) {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            const downloadBtn = document.getElementById('download-btn');
+
+            img.src = src;
+
+            // Ustaw poprawny link do pobrania
+            const nazwa = src.split('/').pop();
+            downloadBtn.href = `/Kamera/Podglad?handler=Pobierz&nazwa=${nazwa}`;
+
+            lightbox.style.display = 'flex';
+        }
+
+        // Zamknij lightbox
+        function zamknijLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        // Zamknięcie po kliknięciu w tło (nie w zdjęcie)
+        document.getElementById('lightbox').addEventListener('click', function (e) {
+            if (e.target.id === 'lightbox') zamknijLightbox();
+        });
+    </script>
+</body>
+</html>

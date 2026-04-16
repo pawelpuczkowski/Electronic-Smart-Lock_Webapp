@@ -1,0 +1,153 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ZamekDoDrzwi
+build_property.RootNamespace = ZamekDoDrzwi
+build_property.ProjectDir = C:\Users\pablo\Desktop\studia\1 stopien\syf z inzynierki\web app\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\pablo\Desktop\studia\1 stopien\syf z inzynierki\web app
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/pablo/Desktop/studia/1 stopien/syf z inzynierki/web app/Pages/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pablo/Desktop/studia/1 stopien/syf z inzynierki/web app/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pablo/Desktop/studia/1 stopien/syf z inzynierki/web app/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pablo/Desktop/studia/1 stopien/syf z inzynierki/web app/Pages/Kamera/Podglad.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcS2FtZXJhXFBvZGdsYWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pablo/Desktop/studia/1 stopien/syf z inzynierki/web app/Pages/Kamera/ZrobZdjecie.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcS2FtZXJhXFpyb2JaZGplY2llLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pablo/Desktop/studia/1 stopien/syf z inzynierki/web app/Pages/Logi/Kody.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naVxLb2R5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pablo/Desktop/studia/1 stopien/syf z inzynierki/web app/Pages/Logi/Przeglad.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naVxQcnplZ2xhZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pablo/Desktop/studia/1 stopien/syf z inzynierki/web app/Pages/Notifications.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTm90aWZpY2F0aW9ucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pablo/Desktop/studia/1 stopien/syf z inzynierki/web app/Pages/Powiadomienia/Konfiguracja.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG93aWFkb21pZW5pYVxLb25maWd1cmFjamEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pablo/Desktop/studia/1 stopien/syf z inzynierki/web app/Pages/Powiadomienia/Zdarzenia.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG93aWFkb21pZW5pYVxaZGFyemVuaWEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pablo/Desktop/studia/1 stopien/syf z inzynierki/web app/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pablo/Desktop/studia/1 stopien/syf z inzynierki/web app/Pages/Profil/Konto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsXEtvbnRvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pablo/Desktop/studia/1 stopien/syf z inzynierki/web app/Pages/ResetujHaslo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzZXR1akhhc2xvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pablo/Desktop/studia/1 stopien/syf z inzynierki/web app/Pages/Shared/_LayoutNavbar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXROYXZiYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pablo/Desktop/studia/1 stopien/syf z inzynierki/web app/Pages/Shared/_UserLayoutNavbar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Vc2VyTGF5b3V0TmF2YmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pablo/Desktop/studia/1 stopien/syf z inzynierki/web app/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pablo/Desktop/studia/1 stopien/syf z inzynierki/web app/Pages/UstawNoweHaslo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXN0YXdOb3dlSGFzbG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pablo/Desktop/studia/1 stopien/syf z inzynierki/web app/Pages/Uzytkownicy/Dodaj.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXp5dGtvd25pY3lcRG9kYWouY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pablo/Desktop/studia/1 stopien/syf z inzynierki/web app/Pages/Uzytkownicy/Edytuj.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXp5dGtvd25pY3lcRWR5dHVqLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pablo/Desktop/studia/1 stopien/syf z inzynierki/web app/Pages/Uzytkownicy/Karty.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXp5dGtvd25pY3lcS2FydHkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pablo/Desktop/studia/1 stopien/syf z inzynierki/web app/Pages/Uzytkownicy/Lista.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXp5dGtvd25pY3lcTGlzdGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pablo/Desktop/studia/1 stopien/syf z inzynierki/web app/Pages/Uzytkownicy/RFID.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXp5dGtvd25pY3lcUkZJRC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pablo/Desktop/studia/1 stopien/syf z inzynierki/web app/Pages/Uzytkownik/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXp5dGtvd25pa1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pablo/Desktop/studia/1 stopien/syf z inzynierki/web app/Pages/Uzytkownik/Konto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXp5dGtvd25pa1xLb250by5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pablo/Desktop/studia/1 stopien/syf z inzynierki/web app/Pages/Uzytkownik/Powiadomienia/Konfiguracja.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXp5dGtvd25pa1xQb3dpYWRvbWllbmlhXEtvbmZpZ3VyYWNqYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pablo/Desktop/studia/1 stopien/syf z inzynierki/web app/Pages/Uzytkownik/Powiadomienia/Zdarzenia.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXp5dGtvd25pa1xQb3dpYWRvbWllbmlhXFpkYXJ6ZW5pYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pablo/Desktop/studia/1 stopien/syf z inzynierki/web app/Pages/Verify2FA.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmVyaWZ5MkZBLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pablo/Desktop/studia/1 stopien/syf z inzynierki/web app/Pages/Zamek/Historia.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcWmFtZWtcSGlzdG9yaWEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pablo/Desktop/studia/1 stopien/syf z inzynierki/web app/Pages/Zamek/Otworz.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcWmFtZWtcT3R3b3J6LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pablo/Desktop/studia/1 stopien/syf z inzynierki/web app/Pages/Zamek/Status.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcWmFtZWtcU3RhdHVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pablo/Desktop/studia/1 stopien/syf z inzynierki/web app/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pablo/Desktop/studia/1 stopien/syf z inzynierki/web app/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pablo/Desktop/studia/1 stopien/syf z inzynierki/web app/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-kk2nsgocej

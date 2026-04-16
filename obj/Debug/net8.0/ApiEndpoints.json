@@ -1,0 +1,165 @@
+[
+  {
+    "ContainingType": "ZamekDoDrzwi.Controllers.AccessLogsController",
+    "Method": "Post",
+    "RelativePath": "api/accesslogs",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "payload",
+        "Type": "System.Text.Json.JsonElement",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ZamekDoDrzwi.Controllers.DeviceStatusController",
+    "Method": "Post",
+    "RelativePath": "api/device-status",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "payload",
+        "Type": "System.Text.Json.JsonElement",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ZamekDoDrzwi.Controllers.EspNotificationController",
+    "Method": "Post",
+    "RelativePath": "api/esp-notify",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "payload",
+        "Type": "System.Text.Json.JsonElement",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ZamekDoDrzwi.Controllers.RfidCheckController",
+    "Method": "Post",
+    "RelativePath": "api/rfid-check",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cardUid",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ZamekDoDrzwi.Controllers.RfidTokenController",
+    "Method": "Post",
+    "RelativePath": "api/rfid-token",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cardUid",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ttlSeconds",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ZamekDoDrzwi.Controllers.RfidTokenVerifyController",
+    "Method": "Post",
+    "RelativePath": "api/rfid-verify",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cardUid",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "verificationCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "token_id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ZamekDoDrzwi.Controllers.SmsNextController",
+    "Method": "Get",
+    "RelativePath": "api/sms-next",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ZamekDoDrzwi.Controllers.SmsSentController",
+    "Method": "Post",
+    "RelativePath": "api/sms-sent",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "messageId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ZamekDoDrzwi.Controllers.CameraUploadController",
+    "Method": "Post",
+    "RelativePath": "api/upload-photo",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ZamekDoDrzwi.Controllers.CodeVerificationController",
+    "Method": "Post",
+    "RelativePath": "api/verify-code",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "accessCode",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

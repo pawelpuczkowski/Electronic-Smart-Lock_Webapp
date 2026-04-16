@@ -1,0 +1,107 @@
+﻿@page
+@model ZamekDoDrzwi.Pages.Uzytkownik.KontoModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>System Kontroli Dostępu - Mój profil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="/css/dashboard.css" rel="stylesheet" />
+    <link href="/css/navbar.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+    @await Html.PartialAsync("_UserLayoutNavbar")
+    <div class="container py-5">
+        <div class="card-dark p-4">
+            <h3 class="mb-3">
+                <i class="bi bi-person-circle me-2"></i> Mój profil
+            </h3>
+
+            @if (!string.IsNullOrEmpty(Model.Komunikat))
+            {
+                <div class="alert alert-info mb-4">@Model.Komunikat</div>
+            }
+
+            <ul class="nav nav-tabs" id="kontoTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="konto-tab" data-bs-toggle="tab" data-bs-target="#konto" type="button" role="tab">
+                        Dane konta
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="haslo-tab" data-bs-toggle="tab" data-bs-target="#haslo" type="button" role="tab">
+                        Zmiana hasła
+                    </button>
+                </li>
+            </ul>
+
+            <div class="tab-content rounded-bottom p-4" id="kontoTabsContent" style="background: var(--card); border: 1px solid var(--border); border-top: 0;">
+                @* Dane konta *@
+                <div class="tab-pane fade show active" id="konto" role="tabpanel" aria-labelledby="konto-tab">
+                    <form method="post" asp-page-handler="Zapisz" class="mt-2">
+                        <div class="mb-3">
+                            <label for="login" class="form-label">Login</label>
+                            <input type="text" class="form-control" id="login" asp-for="Konto.Login" readonly />
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" asp-for="Konto.Email" autocomplete="email" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="telefon" class="form-label">Telefon</label>
+                            <input type="text" class="form-control" id="telefon" asp-for="Konto.Telefon" autocomplete="tel" />
+                            <div class="form-text muted">Format: np. 500123456 lub +48 500 123 456</div>
+                        </div>
+
+                        <button type="submit" class="btn accent">Zapisz zmiany</button>                       
+                    </form>
+                </div>
+
+                @* Zmiana hasła *@
+                <div class="tab-pane fade" id="haslo" role="tabpanel" aria-labelledby="haslo-tab">
+                    <form method="post" asp-page-handler="Zmienhaslo" class="mt-2">                      
+
+                        <div class="mb-3">
+                            <label asp-for="Haslo.StareHaslo" class="form-label"></label>
+                            <input asp-for="Haslo.StareHaslo" class="form-control" type="password" autocomplete="current-password" />
+                            <span asp-validation-for="Haslo.StareHaslo" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Haslo.NoweHaslo" class="form-label"></label>
+                            <input asp-for="Haslo.NoweHaslo" class="form-control" type="password" autocomplete="new-password" />
+                            <span asp-validation-for="Haslo.NoweHaslo" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Haslo.PotwierdzHaslo" class="form-label"></label>
+                            <input asp-for="Haslo.PotwierdzHaslo" class="form-control" type="password" autocomplete="new-password" />
+                            <span asp-validation-for="Haslo.PotwierdzHaslo" class="text-danger"></span>
+                        </div>
+
+                        <button type="submit" class="btn accent">Zmień hasło</button>                      
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const zakladka = '@Model.AktywnaZakladka';
+            if (zakladka) {
+                const trigger = document.querySelector(`[data-bs-target="#${zakladka}"]`);
+                if (trigger) new bootstrap.Tab(trigger).show();
+            }
+        });
+    </script>
+
+</body>
+</html>

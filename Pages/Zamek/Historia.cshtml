@@ -1,0 +1,87 @@
+﻿@page
+@model ZamekDoDrzwi.Pages.Zamek.HistoriaModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>System Kontroli Dostępu - Historia otwarć</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="/css/dashboard.css" rel="stylesheet" />
+    <link href="/css/navbar.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>   
+    @await Html.PartialAsync("_LayoutNavbar")
+
+    <div class="container py-5">      
+        <div class="card-dark p-4 mb-4 shadow-sm">
+            <h3 class="mb-2">
+                <i class="bi bi-clock-history me-2"></i> Historia zdalnych otwarć
+            </h3>
+            <p class="muted mb-0">Zestawienie zarejestrowanych prób otwarcia zamka.</p>
+        </div>
+
+        @* Jeśli są dane w modelu *@
+        @if (Model.Historia != null && Model.Historia.Any())
+        {
+            <div class="card-dark p-0 shadow-sm">
+                <div class="table-responsive">
+                    <table class="table table-dark table-hover table-bordered align-middle mb-0">
+                        <thead>
+                            <tr>
+                                <th style="width:56px;">#</th>
+                                <th>Data i godzina</th>
+                                <th>Szczegóły</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int i = 0; i < Model.Historia.Count; i++)
+                            {
+                                var entry = Model.Historia[i];
+                                <tr>                                    
+                                    <td>@(i + 1)</td>
+
+                                    @* Data wykonania *@
+                                    <td>@entry.Data.ToString("yyyy-MM-dd HH:mm:ss")</td>
+
+                                    @* Szczegóły logu (np. kto i jak otworzył zamek) *@
+                                    <td class="text-start">@entry.Szczegoly</td>
+
+                                    @* Status (zielony – sukces / czerwony – błąd) *@
+                                    <td>
+                                        @if (entry.Sukces)
+                                        {
+                                            <span class="badge bg-success">
+                                                <i class="bi bi-check-circle-fill me-1"></i>Sukces
+                                            </span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-danger">
+                                                <i class="bi bi-x-circle-fill me-1"></i>Błąd
+                                            </span>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        }
+        else
+        {
+            @* Gdy brak wpisów w bazie *@
+            <div class="alert alert-warning">Brak danych o otwarciach.</div>
+        }
+    </div>
+</body>
+</html>

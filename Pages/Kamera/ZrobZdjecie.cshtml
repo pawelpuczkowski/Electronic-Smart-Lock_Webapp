@@ -1,0 +1,107 @@
+﻿@page
+@model ZamekDoDrzwi.Pages.Kamera.ZrobZdjecieModel
+@{
+    Layout = null; 
+}
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>System Kontroli Dostępu - Zrób zdjęcie</title>   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">    
+    <link href="/css/dashboard.css" rel="stylesheet" />
+    <link href="/css/navbar.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>   
+    @await Html.PartialAsync("_LayoutNavbar")
+
+    <div class="container py-5">
+        @* Nagłówek sekcji *@
+        <div class="card-dark p-4 text-center mb-4">
+            <h3 class="fw-bold mb-2">
+                <i class="bi bi-camera-fill me-2"></i> Wykonaj zdjęcie z kamery
+            </h3>
+            <p class="muted mb-0">Zrób nowe zdjęcie i zobacz ostatni zapisany kadr</p>
+        </div>
+
+        @* Komunikat z TempData *@
+        @if (TempData["KomunikatKamera"] != null)
+        {
+            <div class="alert alert-info text-center w-100 mb-4 shadow-sm">
+                @TempData["KomunikatKamera"]
+            </div>
+        }
+
+        @* Formularz wyzwalający akcję robienia zdjęcia *@
+        <div class="d-flex justify-content-center mb-4">
+            <form method="post" id="shoot-form">
+                <button type="submit" class="btn accent btn-lg px-4 shadow-sm" id="shoot-btn">
+                    <i class="bi bi-camera"></i> Zrób zdjęcie teraz
+                </button>
+            </form>
+        </div>
+
+        @* Loader (widoczny w trakcie wykonywania zdjęcia) *@
+        <div id="loader" class="d-none text-center my-5">
+            <div class="spinner-border" style="width: 4rem; height: 4rem; color: var(--accent);" role="status">
+                <span class="visually-hidden">Ładowanie...</span>
+            </div>
+            <div class="mt-2 muted">Oczekiwanie na zdjęcie...</div>
+        </div>
+
+        @* Sekcja podglądu ostatniego zdjęcia *@
+        @if (Model.OstatnieZdjecieUrl != null)
+        {
+            <div id="photo-container" class="mt-4">
+                <div class="card-dark p-3 mx-auto" style="max-width: 720px;">
+                    <div class="text-center mb-2">
+                        <h5 class="mb-0">Ostatnie zdjęcie</h5>
+                    </div>
+                    <div class="text-center">
+                        <img id="recent-photo"
+                             src="@Model.OstatnieZdjecieUrl"
+                             class="img-frame"
+                             alt="Ostatnie zdjęcie"
+                             onerror="this.style.display='none'; document.getElementById('no-photo').style.display='block';" />
+
+                        @* Komunikat przy braku zdjęcia *@
+                        <div id="no-photo" class="text-muted" style="display: none;">
+                            Brak zdjęcia do wyświetlenia
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+   @* Skrypty strony *@
+    <script>
+        const form = document.getElementById("shoot-form");
+        const loader = document.getElementById("loader");
+        const photo = document.getElementById("recent-photo");
+
+        // Po kliknięciu "Zrób zdjęcie" — pokaż loader i ukryj poprzedni kadr
+        form.addEventListener("submit", function () {
+            loader.classList.remove("d-none");
+            if (photo) {
+                photo.style.display = "none";
+            }
+        });
+
+        // Gdy zdjęcie się załaduje — schowaj loader i pokaż obraz
+        window.addEventListener("load", function () {
+            if (photo) {
+                photo.onload = function () {
+                    loader.classList.add("d-none");
+                    photo.style.display = "block";
+                };
+            }
+        });
+    </script>
+</body>
+</html>

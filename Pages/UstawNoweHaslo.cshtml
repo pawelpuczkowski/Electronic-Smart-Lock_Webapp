@@ -1,0 +1,71 @@
+﻿@page
+@model UstawNoweHasloModel
+@{
+    Layout = null;  
+}
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>System Kontroli Dostępu - Ustaw nowe hasło</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+</head>
+
+<body>
+  
+    <div class="login-box">
+
+        <div class="logo-text d-flex align-items-center justify-content-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 width="32" height="32"
+                 stroke="#0ff" fill="none"
+                 stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="11" width="14" height="10" rx="2" />
+                <circle cx="12" cy="16" r="1" />
+                <path d="M8 11v-4a4 4 0 0 1 8 0v4" />
+            </svg>
+            <span>Nowe hasło</span>
+        </div>
+    
+        <form method="post">
+
+            @* Pole: nowe hasło *@
+            <div class="mb-3">
+                <input asp-for="NoweHaslo"
+                       type="password"
+                       class="form-control"
+                       placeholder="Nowe hasło" />
+                <span asp-validation-for="NoweHaslo" class="text-danger small"></span>
+            </div>
+
+            @* Pole: powtórzenie nowego hasła (dla walidacji) *@
+            <div class="mb-3">
+                <input asp-for="PowtorzHaslo"
+                       type="password"
+                       class="form-control"
+                       placeholder="Powtórz hasło" />
+                <span asp-validation-for="PowtorzHaslo" class="text-danger small"></span>
+            </div>
+
+            @* Przycisk zapisu zmian *@
+            <button type="submit" class="btn btn-primary w-100">Zmień hasło</button>
+
+            @* Komunikat o powodzeniu operacji (zielony) *@
+            @if (!string.IsNullOrEmpty(Model.InfoMessage))
+            {
+                <div class="success-message mt-3">@Model.InfoMessage</div>
+            }
+
+            @*  Komunikat o błędzie (czerwony) *@
+            @if (!string.IsNullOrEmpty(Model.BadInfoMessage))
+            {
+                <div class="error-message mt-3">@Model.BadInfoMessage</div>
+            }
+        </form>
+    </div>
+</body>
+</html>

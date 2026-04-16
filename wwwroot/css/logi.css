@@ -1,0 +1,30 @@
+﻿/* --- Styl tabeli z logami*/
+table.log-table th,
+table.log-table td {
+    /* Zapobiega zawijaniu tekstu (np. długie daty, adresy IP) */
+    white-space: nowrap;
+    /* Standardowy odstęp wewnętrzny w komórkach */
+    padding: 0.5rem 1rem;
+    /* Minimalna szerokość kolumny dla czytelności */
+    min-width: 120px;
+    /* Wyrównanie tekstu do lewej (bardziej naturalne dla logów) */
+    text-align: left;
+}
+
+/* Dla dużych tabel – przewijanie poziome, gdy brak miejsca */
+.table__body {
+    overflow-x: auto;
+}
+
+/* Główny nagłówek tabeli (zablokowany przy przewijaniu) */
+thead th {
+    position: sticky;
+    top: 0;
+    background-color: #1e1e2f; /* delikatny ciemniejszy odcień */
+    z-index: 2; /* żeby nie zasłaniały go wiersze */
+}
+
+/* Efekt podświetlenia wiersza po najechaniu */
+tbody tr:hover {
+    background-color: #2a2a40;
+}

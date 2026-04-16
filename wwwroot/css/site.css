@@ -1,0 +1,67 @@
+/* Ogólne t³o i tekst */
+body {
+    background: radial-gradient(circle at top left, #1e1e2f, #0f0f1a);
+    color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* G³ówne kontenery (logowanie / weryfikacja kodu) */
+.login-box,
+.verify-box {
+    max-width: 400px;
+    margin: 10vh auto; /* wyœrodkowanie pionowe i poziome */
+    background-color: #222; /* ciemne t³o panelu */
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0,255,255,0.4);
+    /* Pola formularza */
+    .form-control
+
+{
+    background-color: #111;
+    color: #0ff;
+    border-color: #0ff;
+}
+
+/* Kolor placeholdera (lekko rozjaœniony) */
+.form-control::placeholder {
+    color: #66ffff !important;
+    opacity: 1;
+}
+
+/* Efekt focusa – podœwietlenie neonem */
+.form-control:focus {
+    background-color: #111;
+    color: #fff;
+    box-shadow: 0 0 5px #0ff;
+    border-color: #0ff;
+}
+
+/*Przycisk g³ówny (Zaloguj siê) */
+.btn-primary {
+    background-color: #0ff;
+    border: none;
+    color: #000;
+    font-weight: bold;
+}
+
+    /* Lekki przyciemniony odcieñ po najechaniu */
+    .btn-primary:hover {
+        background-color: #0cc;
+    }
+
+/* Mag³ówek formularza */
+.logo-text {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #0ff;
+}
+
+/* Komunikat b³êdu (Z³y kod lub has³o) */
+.error-message {
+    margin-top: 10px;
+    color: #ff4d4d;
+    font-size: 0.9rem;
+    text-align: center;
+}

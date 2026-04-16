@@ -1,0 +1,106 @@
+﻿@page
+@model ZamekDoDrzwi.Pages.Uzytkownicy.ListaModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>System Kontroli Dostępu - Lista użytkowników</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="/css/dashboard.css" rel="stylesheet" />
+    <link href="/css/navbar.css" rel="stylesheet" />
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>    
+    @Html.Partial("_LayoutNavbar")
+
+    <main class="container py-5">        
+        <div class="card-dark p-4 shadow-sm">
+            <h3 class="mb-3">
+                <i class="bi bi-people-fill me-2"></i> Lista użytkowników
+            </h3>
+            <p class="muted mb-4">
+                Zarządzaj kontami użytkowników systemu.
+            </p>
+
+            @* Tabela z użytkownikami *@
+            <div class="table-responsive">
+                <table class="table table-dark table-bordered align-middle text-center mb-0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Login</th>
+                            <th>Email</th>
+                            <th>Telefon</th>
+                            <th>Rola</th>
+                            <th>Status</th>
+                            <th>Akcje</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @* Pętla wyświetlająca użytkowników *@
+                        @foreach (var u in Model.Uzytkownicy)
+                        {
+                            <tr>
+                                @* Kolumny podstawowych danych *@
+                                <td>@u.Id</td>
+                                <td>@u.Login</td>
+                                <td>@u.Email</td>
+                                <td>@u.Telefon</td>
+
+                                @* Rola użytkownika z wyróżnieniem kolorem akcentu *@
+                                <td>
+                                    <span class="badge" style="background: var(--accent); color: #001317;">
+                                        @u.Rola
+                                    </span>
+                                </td>
+
+                                @* Status konta (aktywny / zablokowany) *@
+                                <td>
+                                    @if (u.Aktywny)
+                                    {
+                                        <span class="badge bg-success">Aktywny</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-danger">Zablokowany</span>
+                                    }
+                                </td>
+
+                                @* Przyciski akcji administracyjnych *@
+                                <td>
+                                    @* Edycja danych użytkownika *@
+                                    <a href="/Uzytkownicy/Edytuj?id=@u.Id" class="btn btn-sm accent-outline me-1">
+                                        Edytuj
+                                    </a>
+
+                                    @* Blokowanie lub odblokowywanie konta *@
+                                    <form method="post" asp-page-handler="Blokuj" asp-route-id="@u.Id" class="d-inline">
+                                        <button type="submit" class="btn btn-sm btn-warning me-1">
+                                            @(u.Aktywny ? "Zablokuj" : "Odblokuj")
+                                        </button>
+                                    </form>
+
+                                    @* Usuwanie użytkownika z potwierdzeniem *@
+                                    <form method="post" asp-page-handler="Usun" asp-route-id="@u.Id" class="d-inline"
+                                          onsubmit="return confirm('Czy na pewno chcesz usunąć tego użytkownika?');">
+                                        <button type="submit" class="btn btn-sm btn-danger">
+                                            <i class="bi bi-trash me-1"></i> Usuń
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

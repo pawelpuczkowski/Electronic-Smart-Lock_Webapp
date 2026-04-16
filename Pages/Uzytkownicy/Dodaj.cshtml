@@ -1,0 +1,67 @@
+﻿@page
+@model ZamekDoDrzwi.Pages.Uzytkownicy.DodajModel
+@{
+    Layout = null; // Widok niezależny od głównego layoutu (np. panel logowania / prosty formularz)
+}
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8" />
+    <title>System Kontroli Dostępu - Dodaj użytkownika</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+</head>
+
+<body>   
+    <div class="login-box">
+        @* Tytuł formularza *@
+        <div class="logo-text text-center">Dodaj użytkownika</div>
+
+        @* Formularz dodawania użytkownika *@
+        <form method="post">
+            @* Pole: Login *@
+            <div class="mb-3">
+                <input asp-for="Login" class="form-control" placeholder="Login" />
+            </div>
+
+            @* Pole: E-mail *@
+            <div class="mb-3">
+                <input asp-for="Email" class="form-control" placeholder="Email" />
+            </div>
+
+            @* Pole: Numer telefonu *@
+            <div class="mb-3">
+                <input asp-for="Telefon" class="form-control" placeholder="Telefon" />
+            </div>
+
+            @* Wybór roli (user/admin) *@
+            <div class="mb-3">
+                <select asp-for="Rola" class="form-control">
+                    <option value="user">Użytkownik</option>
+                    <option value="admin">Administrator</option>
+                </select>
+            </div>
+
+            @* Pole: Hasło *@
+            <div class="mb-3">
+                <input asp-for="Haslo" type="password" class="form-control" placeholder="Hasło" />
+            </div>
+
+            @* Przycisk zatwierdzający *@
+            <button type="submit" class="btn btn-primary w-100">
+                <i class="bi bi-person-plus-fill me-1"></i> Dodaj
+            </button>
+
+           @* Sekcja komunikatu po wysłaniu formularza *@
+            @if (!string.IsNullOrEmpty(Model.InfoMessage))
+            {
+                <div class="error-message mt-3 text-center">
+                    @Model.InfoMessage
+                </div>
+            }
+        </form>
+    </div>
+</body>
+</html>

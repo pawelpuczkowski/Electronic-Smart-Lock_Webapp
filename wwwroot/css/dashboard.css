@@ -1,0 +1,293 @@
+﻿/*Kolory bazowe*/
+:root {
+    --bg: #0d141a;
+    --card: #14202b;
+    --text: #dce3e8;
+    --muted: #9fb0bd;
+    --accent: #00e6ff;
+    --border: #233647;
+    --shadow: 0 6px 24px rgba(0,0,0,.35);
+}
+
+/*Ustawienia ogólne*/
+body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+p, li, strong {
+    color: var(--text);
+}
+/* Słabszy tekst (np. opisy, daty) */
+.muted, .text-muted, .small {
+    color: var(--muted) !important;
+}
+/* Nagłówki z lekkim neonowym akcentem */
+h1, h2, h3, h4, h5 {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* Karty i panele */
+.card-dark {
+    background: var(--card);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    border-radius: .8rem;
+}
+
+    .card-dark h5 {
+        color: var(--accent);
+        font-weight: 600;
+    }
+
+/* Przyciski */
+.btn.accent {
+    background: var(--accent);
+    color: #001317;
+    border: none;
+}
+    /*rozjaśnienie po najechaniu*/
+    .btn.accent:hover {
+        filter: brightness(1.05);
+    }
+
+.btn.accent-outline {
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    background: transparent;
+}
+
+    .btn.accent-outline:hover {
+        background: rgba(0,230,255,.12);
+    }
+
+.btn-primary, .btn-info {
+    background: var(--accent) !important;
+    color: #001317 !important;
+    border: 1px solid var(--accent) !important;
+}
+
+    .btn-primary:hover, .btn-info:hover {
+        filter: brightness(1.05);
+    }
+
+/*Formularze*/
+.form-control, .form-select {
+    background: #0f1720 !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+}
+    /* Placeholdery lekko przygaszone */
+    .form-control::placeholder {
+        color: var(--muted) !important;
+    }
+    /* Podświetlenie pola formularza */
+    .form-control:focus, .form-select:focus {
+        outline: none !important;
+        box-shadow: 0 0 0 .2rem rgba(0,230,255,.15) !important;
+        border-color: var(--accent) !important;
+    }
+/* Checkboxy i przełączniki */
+.form-check-input {
+    background: #0f1720 !important;
+    border: 1px solid var(--border) !important;
+}
+
+    .form-check-input:checked {
+        background-color: var(--accent) !important;
+        border-color: var(--accent) !important;
+    }
+/* Kolor etykiet formularza */
+.form-check-label {
+    color: var(--text) !important;
+}
+
+/* Zakładki */
+.nav-tabs .nav-link {
+    background: #0f1720;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    margin-right: .4rem;
+}
+    /* Reakcja na hover w tabach */
+    .nav-tabs .nav-link:hover {
+        color: var(--text);
+    }
+    /* Aktywna zakładka = akcent i pogrubienie */
+    .nav-tabs .nav-link.active {
+        background: var(--card);
+        color: var(--accent);
+        border-color: var(--accent);
+        font-weight: 600;
+    }
+
+.alert {
+    border: 1px solid var(--border);
+    background: #0f1720;
+    color: var(--text);
+}
+
+.alert-info {
+    border-color: var(--accent);
+}
+
+.alert-success {
+    border-color: #1f6f4a;
+}
+
+.alert-warning {
+    border-color: #6f5b1f;
+}
+
+.alert-danger {
+    border-color: #6f1f2b;
+}
+
+/* Tabela ciemna */
+.table-dark {
+    --bs-table-bg: var(--card);
+    --bs-table-color: var(--text);
+    --bs-table-border-color: var(--border);
+    --bs-table-striped-bg: #101a23;
+    --bs-table-hover-bg: #0f1720;
+    border-color: var(--border);
+}
+
+/* Podgląd zdjęcia */
+.img-frame {
+    max-height: 360px;
+    width: 100%;
+    object-fit: contain;
+    border: 1px solid var(--border);
+    border-radius: .6rem;
+    box-shadow: 0 4px 18px rgba(0,0,0,.30);
+    background: #000;
+}
+
+/* Lista zdarzeń */
+.event-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+    .event-list li {
+        margin-bottom: .75rem;
+        padding-left: 1.2rem;
+        position: relative;
+    }
+
+        .event-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+/* Navbar */
+.navbar {
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+}
+
+    .navbar .navbar-brand, .navbar .nav-link {
+        color: var(--text) !important;
+    }
+        /* Akcent po najechaniu */
+        .navbar .nav-link:hover, .navbar .dropdown-item:hover {
+            color: var(--accent) !important;
+        }
+    /* Menu rozwijane */
+    .navbar .dropdown-menu {
+        background: #0f1720;
+        border: 1px solid var(--border);
+    }
+
+    .navbar .dropdown-item {
+        color: var(--text);
+    }
+    /* Reset list wewnątrz nawigacji */
+    .navbar .navbar-nav, .navbar .dropdown-menu {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 0;
+    }
+
+        .navbar .navbar-nav li, .navbar .dropdown-menu li {
+            padding-left: 0;
+        }
+
+            .navbar .navbar-nav li::before, .navbar .dropdown-menu li::before {
+                content: none !important;
+            }
+
+        .navbar .navbar-nav .dropdown {
+            position: relative;
+        }
+        /* Odstęp między dropdownami */
+        .navbar .navbar-nav .dropdown-menu {
+            margin-top: .5rem;
+        }
+
+/* Wykresy Chart.js tło */
+canvas {
+    background: #0f1720 !important;
+    border-radius: 12px;
+    padding: 10px;
+}
+/* Kolor legendy na wykresach */
+.chart-legend {
+    color: var(--muted) !important;
+    font-size: 14px;
+}
+/* Lightbox (podgląd zdjęć) */
+#lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.85);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+    /* Widoczny tylko po otwarciu */
+    #lightbox.is-open {
+        display: flex;
+    }
+
+#lightbox-img {
+    max-width: 90%;
+    max-height: 90%;
+}
+/* Przycisk zamknięcia lightboxa */
+.lightbox-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+/* Miniaturki zdjęć */
+.thumb {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 1px solid var(--border);
+    border-radius: .4rem;
+    cursor: pointer;
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+    /* Animacja powiększenia miniatury */
+    .thumb:hover {
+        transform: scale(1.05);
+        box-shadow: 0 2px 8px rgba(0,0,0,.4);
+    }
+/* Elementy powiadomień na dashboardzie */
+.dash-notif-item {
+    transition: opacity 0.3s ease;
+}
+    /* Efekt zanikania po usunięciu */
+    .dash-notif-item.fade-out {
+        opacity: 0;
+    }

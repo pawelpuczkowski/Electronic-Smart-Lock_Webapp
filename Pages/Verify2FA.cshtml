@@ -1,0 +1,42 @@
+﻿@page
+@model ZamekDoDrzwi.Pages.Verify2FAModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8" />
+    <title>System Kontroli Dostępu - Weryfikacja 2FA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+</head>
+
+<body>   
+    <div class="verify-box">
+        <h4 class="text-center text-info mb-3">Weryfikacja dwuetapowa</h4>
+
+        @* Formularz przyjmuje jednorazowy kod z e-maila *@
+        <form method="post">
+
+            @* Pole wejściowe – kod 2FA (6 cyfr) *@
+            <div class="mb-3">
+                <input asp-for="Code"
+                       class="form-control"
+                       placeholder="Wprowadź kod 2FA" />
+                <span asp-validation-for="Code" class="text-danger small"></span>
+            </div>
+
+            @* Komunikat błędu (np. błędny lub wygasły kod) *@
+            @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+            {
+                <div class="text-danger mb-2">@Model.ErrorMessage</div>
+            }
+
+            @* Przycisk zatwierdzający kod *@
+            <button type="submit" class="btn btn-primary w-100">Potwierdź</button>
+        </form>
+    </div>
+</body>
+</html>

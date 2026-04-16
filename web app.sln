@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZamekDoDrzwi", "ZamekDoDrzwi.csproj", "{71C38E96-EE53-64DA-DCB8-FB5C877D46EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{71C38E96-EE53-64DA-DCB8-FB5C877D46EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71C38E96-EE53-64DA-DCB8-FB5C877D46EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71C38E96-EE53-64DA-DCB8-FB5C877D46EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71C38E96-EE53-64DA-DCB8-FB5C877D46EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {52EB004D-ABFC-4623-A804-ABF478C02C93}
+	EndGlobalSection
+EndGlobal

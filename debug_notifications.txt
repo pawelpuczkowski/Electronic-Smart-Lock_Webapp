@@ -1,0 +1,33 @@
+{
+  "eventType": "door_opened",
+  "message": "Drzwi zostały otwarte przez kartę RFID #A1260004"
+}
+{
+  "eventType": "door_opened",
+  "message": "Drzwi zostały otwarte przez kartę RFID #A1260004"
+}
+{"eventType":"camera_photo","message":"Wykryto ruch i zrobiono zdjecie."}
+{"eventType":"doorbell_pressed","message":"Ktos dzwoni"}
+{"eventType":"access_denied","message":"Odmowa dostepu karcie RFID"}
+{"eventType":"camera_photo","message":"Wykryto ruch i zrobiono zdjecie."}
+{"eventType":"camera_photo","message":"Wykryto ruch i zrobiono zdjecie."}
+{"eventType":"access_denied","message":"Odmowa dostepu karcie RFID"}
+{"eventType":"camera_photo","message":"Wykryto ruch i zrobiono zdjecie."}
+{"eventType":"camera_photo","message":"Wykryto ruch i zrobiono zdjecie."}
+{"eventType":"camera_photo","message":"Wykryto ruch i zrobiono zdjecie."}
+{"eventType":"camera_photo","message":"Wykryto ruch i zrobiono zdjecie."}
+{"eventType":"camera_photo","message":"Wykryto ruch i zrobiono zdjecie."}
+{"eventType":"camera_photo","message":"Wykryto ruch i zrobiono zdjecie."}
+{"eventType":"camera_photo","message":"Wykryto ruch i zrobiono zdjecie."}
+{"eventType":"camera_photo","message":"Wykryto ruch i zrobiono zdjecie."}
+{"eventType":"camera_photo","message":"Wykryto ruch i zrobiono zdjecie."}
+{"eventType":"camera_photo","message":"Wykryto ruch i zrobiono zdjecie."}
+{"eventType":"camera_photo","message":"Wykryto ruch i zrobiono zdjecie."}
+{"eventType":"camera_photo","message":"Wykryto ruch i zrobiono zdjecie."}
+{"eventType":"camera_photo","message":"Wykryto ruch i zrobiono zdjecie."}
+{"eventType":"access_denied","message":"Odmowa dostepu karcie RFID"}
+{"eventType":"access_denied","message":"Odmowa dostepu karcie RFID"}
+{"eventType":"access_denied","message":"Odmowa dostepu karcie RFID"}
+{"eventType":"camera_photo","message":"Wykryto ruch i zrobiono zdjecie."}
+{"eventType":"access_denied","message":"Odmowa dostepu karcie RFID"}
+{"eventType":"camera_photo","message":"Wykryto ruch i zrobiono zdjecie."}

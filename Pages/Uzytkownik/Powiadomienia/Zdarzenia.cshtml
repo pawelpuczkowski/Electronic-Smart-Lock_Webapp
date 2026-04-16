@@ -1,0 +1,84 @@
+﻿@page
+@model ZamekDoDrzwi.Pages.Uzytkownik.Powiadomienia.ZdarzeniaModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>System Kontroli Dostępu - Zdarzenia do powiadomień</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="/css/dashboard.css" rel="stylesheet" />
+    <link href="/css/navbar.css" rel="stylesheet" />
+</head>
+<body>
+    @await Html.PartialAsync("_UserLayoutNavbar")
+
+    <div class="container py-5">
+        <div class="card-dark p-4">            
+            <h3 class="mb-3">
+                <i class="bi bi-bell-fill me-2"></i> Zdarzenia do powiadomień
+            </h3>
+
+            @* Krótki opis funkcji *@
+            <p class="muted mb-4">
+                Kanał musi być aktywny również globalnie, aby powiadomienie mogło zostać wysłane.
+            </p>
+
+            @* Wyświetlenie komunikatu po zapisie *@
+            @if (!string.IsNullOrEmpty(Model.KomunikatZdarzenia))
+            {
+                <div class="alert alert-info mb-4">@Model.KomunikatZdarzenia</div>
+            }
+
+            @* Formularz z listą zdarzeń *@
+            <form method="post">
+                <div class="table-responsive">
+                    <table class="table table-dark table-hover align-middle text-center">
+                        <thead>
+                            <tr>
+                                <th class="text-start">Zdarzenie</th>
+                                <th>E-mail</th>
+                                <th>Log</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int i = 0; i < Model.Zdarzenia.Count; i++)
+                            {
+                                <tr>
+                                    @* Nazwa zdarzenia *@
+                                    <td class="text-start">
+                                        @Model.Zdarzenia[i].EventLabel
+                                        @* Ukryte pole przechowujące typ zdarzenia *@
+                                        <input type="hidden" asp-for="@Model.Zdarzenia[i].EventType" />
+                                    </td>
+
+                                    @* Checkbox dla kanału e-mail *@
+                                    <td>
+                                        <div class="form-check d-flex justify-content-center mb-0">
+                                            <input class="form-check-input" asp-for="@Model.Zdarzenia[i].EmailEnabled" />
+                                        </div>
+                                    </td>
+
+                                    @* Checkbox dla kanału logów *@
+                                    <td>
+                                        <div class="form-check d-flex justify-content-center mb-0">
+                                            <input class="form-check-input" asp-for="@Model.Zdarzenia[i].LogEnabled" />
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+                @* Przycisk zapisu ustawień *@
+                <button type="submit" class="btn accent mt-2">Zapisz ustawienia</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

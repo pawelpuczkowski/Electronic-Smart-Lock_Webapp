@@ -9,10 +9,10 @@ public class MqttWorker : BackgroundService
     private readonly ILogger<MqttWorker> _logger;
     private readonly IConfiguration _settings;
     private IMqttClient? _mqttClient;
-    private readonly string broker = "zamekdodrzwi.pl";
+    private readonly string broker = "";
     private readonly int port = 1883;
-    private readonly string username = "zamek_user";
-    private readonly string password = "Zamekdodrzwi123!";
+    private readonly string username = "";
+    private readonly string password = "";
 
     public MqttWorker(ILogger<MqttWorker> logger, IConfiguration settings)
     {

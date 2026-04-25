@@ -14,10 +14,10 @@ namespace ZamekDoDrzwi.Services
         public static void Send(string to, string subject, string body)
         {          
             // Konfiguracja serwera SMTP (Gmail)         
-            string smtpHost = "smtp.gmail.com"; // adres serwera SMTP
-            int smtpPort = 587;                 // port TLS
-            string smtpUser = "zamekdodrzwiiot@gmail.com"; // konto nadawcy
-            string smtpPass = "jrvsvuyfbexkwqof";          // hasło aplikacji Gmail (NIE zwykłe hasło!)
+            string smtpHost = ""; // adres serwera SMTP
+            int smtpPort = ;                 // port TLS
+            string smtpUser = ""; // konto nadawcy
+            string smtpPass = "";          
             // Konfiguracja klienta SMTP            
             using var client = new SmtpClient(smtpHost, smtpPort)
             {

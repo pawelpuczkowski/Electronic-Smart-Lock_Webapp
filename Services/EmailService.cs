@@ -5,11 +5,11 @@ public static class EmailService
     public static void Send(string to, string subject, string body)
     {
         //Konfiguracja serwera SMTP (Gmail)        
-        string smtpHost = "smtp.gmail.com";              // Adres serwera SMTP
-        int smtpPort = 587;                              // Port TLS (STARTTLS)
-        string smtpUser = "zamekdodrzwiiot@gmail.com";   // Konto nadawcy
-        string smtpPass = "jrvsvuyfbexkwqof";            // Hasło aplikacji Gmail
-        // string smtpPass = "ZamekdodrzwiIoT123";               
+        string smtpHost = "";              // Adres serwera SMTP
+        int smtpPort = ;                              // Port TLS (STARTTLS)
+        string smtpUser = "";   // Konto nadawcy
+        string smtpPass = "";            // Hasło aplikacji Gmail
+        // string smtpPass = "";               
         // Inicjalizacja klienta SMTP       
         var client = new SmtpClient(smtpHost, smtpPort)
         {
